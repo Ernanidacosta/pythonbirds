@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 """
 Você deve criar uma classe carro que vai possuir
 dois atributos compostos por outras duas classes:
@@ -94,12 +96,3 @@ Exemplo:
     >>> carro.calcular_direcao()
     'Oeste'
 """
-
-class Carro:
-    
-    
-    def motor:
-        pass
-
-    def direcao:
-        pass
