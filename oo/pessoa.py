@@ -1,9 +1,9 @@
 class Pessoa:
-    olhos=2
+    olhos = 2
 
-    def __init__(self, *filhos, nome=None, idade=33):
+    def __init__(self, *filhos, nome=None, idade=34):
         self.idade = idade
-        self.nome = nome    
+        self.nome = nome
         self.filhos = list(filhos)
 
     def cumprimentar(self):
@@ -17,9 +17,14 @@ class Pessoa:
     def nome_e_atributos_de_classe(cls):
         return f'{cls} - olhos {cls.olhos}'
 
+
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
     rose = Pessoa(nome='Rose')
-    ernani = Pessoa(rose, nome='Ernani')
+    ernani = Homem(rose, nome='Ernani')
     print(Pessoa.cumprimentar(ernani))
     print(id(rose))
     print(ernani.cumprimentar())
@@ -33,7 +38,7 @@ if __name__ == '__main__':
     del ernani.olhos
     print(ernani.__dict__)
     print(rose.__dict__)
-    Pessoa.olhos=3
+    Pessoa.olhos = 3
     print(Pessoa.olhos)
     print(ernani.olhos)
     print(rose.olhos)
