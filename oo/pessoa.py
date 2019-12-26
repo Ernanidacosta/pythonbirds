@@ -23,7 +23,7 @@ class Homem(Pessoa):
 
 
 class Mutante(Pessoa):
-    pass
+    olhos = 3
 
 
 if __name__ == '__main__':
@@ -54,3 +54,4 @@ if __name__ == '__main__':
     print(isinstance(pessoa, Homem))
     print(isinstance(ernani, Pessoa))
     print(isinstance(ernani, Homem))
+    print(ernani.olhos)
