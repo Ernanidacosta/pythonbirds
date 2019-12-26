@@ -22,9 +22,13 @@ class Homem(Pessoa):
     pass
 
 
+class Mutante(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
     rose = Pessoa(nome='Rose')
-    ernani = Homem(rose, nome='Ernani')
+    ernani = Mutante(nome='Ernani')
     print(Pessoa.cumprimentar(ernani))
     print(id(rose))
     print(ernani.cumprimentar())
@@ -38,10 +42,15 @@ if __name__ == '__main__':
     del ernani.olhos
     print(ernani.__dict__)
     print(rose.__dict__)
-    Pessoa.olhos = 3
+    Pessoa.olhos = 2
     print(Pessoa.olhos)
     print(ernani.olhos)
     print(rose.olhos)
     print(id(Pessoa.olhos), id(ernani.olhos), id(rose.olhos))
     print(Pessoa.static_method(), ernani.static_method())
     print(Pessoa.nome_e_atributos_de_classe(), ernani.nome_e_atributos_de_classe())
+    pessoa = Pessoa('Anonimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(ernani, Pessoa))
+    print(isinstance(ernani, Homem))
