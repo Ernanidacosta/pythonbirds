@@ -115,3 +115,9 @@ class Fase():
             if porco.status == ATIVO:
                 return True
         return False
+
+    def _possui_passaros_ativos(self):
+        for passaro in self._passaros:
+            if passaro.status == ATIVO:
+                return True
+        return False
