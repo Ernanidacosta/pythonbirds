@@ -7,7 +7,7 @@ class Pessoa:
         self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá, meu nome é {self.nome}'
 
     @staticmethod
     def static_method():
@@ -19,7 +19,9 @@ class Pessoa:
 
 
 class Homem(Pessoa):
-    pass
+    def cumprimentar(self):
+        cumprimentar_da_classe = super().cumprimentar()
+        return f'{cumprimentar_da_classe}. Aperto de Mão'
 
 
 class Mutante(Pessoa):
@@ -27,7 +29,7 @@ class Mutante(Pessoa):
 
 
 if __name__ == '__main__':
-    rose = Pessoa(nome='Rose')
+    rose = Homem(nome='Rose')
     ernani = Mutante(nome='Ernani')
     print(Pessoa.cumprimentar(ernani))
     print(id(rose))
@@ -38,8 +40,7 @@ if __name__ == '__main__':
         print(filho.nome)
     ernani.sobrenome = 'Costa'
     del ernani.filhos
-    ernani.olhos = 1
-    del ernani.olhos
+    ernani.olhos = 2
     print(ernani.__dict__)
     print(rose.__dict__)
     Pessoa.olhos = 2
@@ -55,3 +56,5 @@ if __name__ == '__main__':
     print(isinstance(ernani, Pessoa))
     print(isinstance(ernani, Homem))
     print(ernani.olhos)
+    print(ernani.cumprimentar())
+    print(rose.cumprimentar())
